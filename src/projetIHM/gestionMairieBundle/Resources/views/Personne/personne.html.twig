@@ -26,14 +26,18 @@
           <ul class="nav nav-pills nav-stacked">
             <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
             <li><a href="{{path('gestion_mairie_ajouterPersonne')}}">Ajouter une personne</a></li>
-          </ul>
+	  </ul>
           
           
         </div>
       
 	<div id="content" class="span8">
           {% block body %}
-          {% endblock %}
+          {% for personne in personnes %}
+                <li>{{personne.Nsecu }} - {{personne.nom }} {{ personne.prenom }} né le {{ personne.dateNai|date('Y-m-d') }} à {{ personne.villeNai }}</li>
+         {% endfor %}
+
+	  {% endblock %}
         </div>
       </div>
 
