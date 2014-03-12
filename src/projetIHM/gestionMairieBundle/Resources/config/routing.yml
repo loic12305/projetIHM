@@ -10,3 +10,15 @@ gestion_mairie_ajouterPersonne:
     pattern:  /mairie/ajouterPersonne
     defaults: { _controller: projetIHMgestionMairieBundle:Personne:ajouterPersonne }
 
+gestion_mairie_supprimerPersonne:
+    pattern:  /mairie/supprimerPersonne/{id}
+    defaults: { _controller: projetIHMgestionMairieBundle:Personne:supprimerPersonne }
+    requirements:
+       id:  \d+
+
+
+gestion_mairie_modifierPersonne:
+    pattern:  /mairie/modifierPersonne/{id}
+    defaults: { _controller: projetIHMgestionMairieBundle:Personne:modifierPersonne }
+    requirements:
+       id:  \d+

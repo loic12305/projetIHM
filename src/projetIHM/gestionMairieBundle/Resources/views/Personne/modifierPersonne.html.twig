@@ -11,17 +11,12 @@
     <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/bootstrap/css/bootstrap.css') }}" type="text/css" />
 
 
-
-   <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/stylesheet.css') }}" type="text/css" />
-
-
-
   </head>
 
   <body>
     <div class="container">
       <div id="header" class="hero-unit">
-        <h1>Liste des personnes</h1>
+        <h1>Ajouter une personne</h1>
         <p>Déstiné aux mairie afin de gerer les personnes.</p>
       </div>
 
@@ -30,27 +25,45 @@
           <h3>Accueil</h3>
           <ul class="nav nav-pills nav-stacked">
             <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
-            <li><a href="{{path('gestion_mairie_ajouterPersonne')}}">Ajouter une personne</a></li>
-	  </ul>
+            <li><a href="{{path('gestion_mairie_personne')}}">Gerer les personnes</a></li>
+          </ul>
           
           
         </div>
       
 	<div id="content" class="span8">
           {% block body %}
-          {% for personne in personnes %}
-	  <table>
-	    <tr><td>{{personne.Nsecu }} - {{personne.nom }} {{ personne.prenom }} né le {{ personne.dateNai|date('Y-m-d') }} à {{ personne.villeNai }}</td><td></br><form action="{{ path('gestion_mairie_modifierPersonne', {'id': personne.id}) }}" method="post">
-		    <input type="submit" value="modifier" class="btn btn-default" />
-   		  </form></td><td></br><form action="{{ path('gestion_mairie_supprimerPersonne', {'id': personne.id}) }}" method="post">
-		    <input type="submit" value="Supprimer" class="btn btn-danger" />
-   		  </form>  
-		  
-</td></tr>
-</table>
-	  {% endfor %}
+	  <h3>Formulaire d'article</h3>
+	  <div class="well">
+	    <form method="post" {{ form_enctype(form) }}>
 
-	  {% endblock %}
+<div>
+  {# Génération du label. #}
+  {{ form_label(form.nom, "Nom") }}
+
+  {# Affichage des erreurs pour ce champ précis. #}
+  {{ form_errors(form.nom) }}
+
+  {# Génération de l'input. #}
+  {{ form_widget(form.nom,{value : personne.nom} ) }}
+</div>
+
+
+<div>
+  {# Génération du label. #}
+  {{ form_label(form.prenom, "Prenom") }}
+
+  {# Affichage des erreurs pour ce champ précis. #}
+  {{ form_errors(form.prenom) }}
+
+  {# Génération de l'input. #}
+  {{ form_widget(form.prenom,{value : personne.prenom} ) }}
+<div>
+
+	      <input type="submit" class="btn btn-primary" />
+	    </form>
+	  </div>
+          {% endblock %}
         </div>
       </div>
 
