@@ -1,0 +1,12 @@
+gestion_mairie_homepage:
+    pattern:  /mairie
+    defaults: { _controller: projetIHMgestionMairieBundle:Accueil:index }
+
+gestion_mairie_personne:
+    pattern:  /mairie/personne
+    defaults: { _controller: projetIHMgestionMairieBundle:Personne:index }
+
+gestion_mairie_ajouterPersonne:
+    pattern:  /mairie/ajouterPersonne
+    defaults: { _controller: projetIHMgestionMairieBundle:Personne:ajouterPersonne }
+

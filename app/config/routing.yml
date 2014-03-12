@@ -1,0 +1,4 @@
+projet_ih_mgestion_mairie:
+    resource: "@projetIHMgestionMairieBundle/Resources/config/routing.yml"
+    prefix:   /
+

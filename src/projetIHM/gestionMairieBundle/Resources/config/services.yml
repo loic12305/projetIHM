@@ -1,0 +1,7 @@
+parameters:
+#    projet_ih_mgestion_mairie.example.class: projetIHM\gestionMairieBundle\Example
+
+services:
+#    projet_ih_mgestion_mairie.example:
+#        class: %projet_ih_mgestion_mairie.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
