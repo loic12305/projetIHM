@@ -22,3 +22,10 @@ gestion_mairie_modifierPersonne:
     defaults: { _controller: projetIHMgestionMairieBundle:Personne:modifierPersonne }
     requirements:
        id:  \d+
+
+
+
+gestion_mairie_ajouterMariage:
+    pattern:  /mairie/ajouterMariage
+    defaults: { _controller: projetIHMgestionMairieBundle:Mariage:ajouterMariage }
+
