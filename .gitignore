@@ -1,6 +1,5 @@
-/web/bundles/
+/web/bundles/*
 /app/cache/*
 /app/logs/*
-/vendor/
 /app/config/parameters.yml
 doSinceLast
