@@ -21,11 +21,11 @@ class PersonneController extends Controller
       ->getManager()
       ->getRepository('projetIHMgestionMairieBundle:Personne');
 
-    // On récupère l'entité correspondant à l'id $id
+   // On récupère toute les entités
     $personnes = $repository->findAll();
   
 
-    // Ou null si aucun article n'a été trouvé avec l'id $id
+    // Ou null si aucune personne n'est trouvé
     if($personnes === null)
       {
 	return $this->redirect($this->generateUrl('gestion_mairie_homepage'));
@@ -97,9 +97,7 @@ class PersonneController extends Controller
 
   public function modifierPersonneAction(Personne $personne)
   {
-
-
-   
+ 
     // On utiliser le ArticleEditType
     $form = $this->createForm(new PersonneEditType(), $personne);
     $request = $this->getRequest();
@@ -118,8 +116,12 @@ class PersonneController extends Controller
         return $this->redirect($this->generateUrl('gestion_mairie_homepage'));
       }
     }
-    $personne->setNom("JENNN");    
-    $personne->setPrenom("BLOT");    
+    $personne->getNom();
+    $personne->getPrenom();
+
+
+
+
     return $this->render('projetIHMgestionMairieBundle:Personne:modifierPersonne.html.twig', array(
 												   'form'    => $form->createView(),
 												   'personne'=>$personne

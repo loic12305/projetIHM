@@ -16,13 +16,16 @@ gestion_mairie_supprimerPersonne:
     requirements:
        id:  \d+
 
-
 gestion_mairie_modifierPersonne:
     pattern:  /mairie/modifierPersonne/{id}
     defaults: { _controller: projetIHMgestionMairieBundle:Personne:modifierPersonne }
     requirements:
        id:  \d+
 
+
+gestion_mairie_mariage:
+    pattern:  /mairie/mariage
+    defaults: { _controller: projetIHMgestionMairieBundle:Mariage:index }
 
 
 gestion_mairie_ajouterMariage:
