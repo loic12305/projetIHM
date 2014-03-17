@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 12 Mars 2014 à 17:14
+-- Généré le: Lun 17 Mars 2014 à 19:01
 -- Version du serveur: 5.6.14
 -- Version de PHP: 5.5.6
 
@@ -17,8 +17,23 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données: `symfony`
+-- Base de données: `projetIHM`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Mariage`
+--
+
+CREATE TABLE IF NOT EXISTS `Mariage` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `numSecu1` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `numSecu2` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `dateMariage` date NOT NULL,
+  `villeMarie` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -35,14 +50,14 @@ CREATE TABLE IF NOT EXISTS `Personne` (
   `villeNai` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `sexe` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
 
 --
 -- Contenu de la table `Personne`
 --
 
 INSERT INTO `Personne` (`id`, `Nsecu`, `nom`, `prenom`, `dateNai`, `villeNai`, `sexe`) VALUES
-(6, 1234, 'ENT', 'Loïc', '2009-01-01', 'Amiens', 'M');
+(11, 123, 'ENT', 'Loïc', '2009-01-01', 'Amiens', 'M');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

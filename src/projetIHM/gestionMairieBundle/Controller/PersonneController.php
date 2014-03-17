@@ -21,7 +21,7 @@ class PersonneController extends Controller
       ->getManager()
       ->getRepository('projetIHMgestionMairieBundle:Personne');
 
-   // On récupère toute les entités
+    // On récupère toute les entités
     $personnes = $repository->findAll();
   
 
@@ -40,16 +40,10 @@ class PersonneController extends Controller
 
   public function ajouterPersonneAction()
   {
-
-
     // On crée un objet Article
     $personne = new Personne();
 
-
-
-
     $form = $this->createForm(new PersonneType, $personne);
-
 
     $request = $this->get('request');
     if ($request->getMethod() == 'POST') {
@@ -64,7 +58,7 @@ class PersonneController extends Controller
       }
     }
 
-      return $this->render('projetIHMgestionMairieBundle:Personne:ajouterPersonne.html.twig',array('form' => $form->createView()));
+    return $this->render('projetIHMgestionMairieBundle:Personne:ajouterPersonne.html.twig',array('form' => $form->createView()));
     
   }
 
@@ -89,72 +83,30 @@ class PersonneController extends Controller
 
 
 
-
-
-
-
-
-
   public function modifierPersonneAction(Personne $personne)
   {
- 
-    // On utiliser le ArticleEditType
-    $form = $this->createForm(new PersonneEditType(), $personne);
-    $request = $this->getRequest();
+   
+    $request = $this->get('request');
+   
+    $form = $this->createForm(new PersonneType, $personne);
 
-    if ($request->getMethod() == 'POST') {
+    
+    if ($request->getMethod() == 'GET') {
       $form->bind($request);
-      if ($form->isValid()) {
-        // On enregistre l'article
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($personne);
-        $em->flush();
-
-        // On définit un message flash
-        $this->get('session')->getFlashBag()->add('info', 'Article bien modifié');
-
-        return $this->redirect($this->generateUrl('gestion_mairie_homepage'));
-      }
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($personne);
+      $em->flush();
+	
+      return $this->redirect($this->generateUrl('gestion_mairie_personne'));
+      
     }
-    $personne->getNom();
-    $personne->getPrenom();
-
-
 
 
     return $this->render('projetIHMgestionMairieBundle:Personne:modifierPersonne.html.twig', array(
-												   'form'    => $form->createView(),
-												   'personne'=>$personne
-    ));
-
-
-
-
-
-
-
-   /* $request = $this->get('request'); */
-
-
-   /*  $em = $this->getDoctrine()->getEntityManager(); */
-   /*  $testimonial = $em->getRepository('projetIHMgestionMairieBundle:Personne')->find($personne); */
-   /*  $form = $this->createForm(new TestimonialType(), $testimonial); */
-
-   /*  if ($request->getMethod() == 'POST') { */
-   /*      $form->bindRequest($request); */
-
-   /*      if ($form->isValid()) { */
-   /*          // perform some action, such as save the object to the database */
-   /*          $em->flush(); */
-
-   /*          return $this->redirect($this->generateUrl('MyBundle_list_testimonials')); */
-   /*      } */
-   /*  } */
-
-   /*  return $this->render('MyBundle:Testimonial:update.html.twig', array( */
-   /*      'form' => $form->createView() */
-   /*  )); */
-
+    												   'form'    => $form->createView(),
+    												   'personne'=>$personne
+												   ));
+ 
   }
 
 

@@ -1,31 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <head>
-
     <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/bootstrap/css/bootstrap.css') }}" type="text/css" />
-
-
-
-   <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/stylesheet.css') }}" type="text/css" />
-
+    <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/stylesheet.css') }}" type="text/css" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}Test Application{% endblock %}</title>
-    </head>
-    <body>
-        <div id="sidebar">
-            {% block sidebar %}
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog">Blog</a></li>
-            </ul>
-            {% endblock %}
-        </div>
+    <title>{% block title %}Test Application{% endblock %}</title>
+  </head>
 
-        <div id="content">
-            {% block body %}{% endblock %}
-        </div>
-    </body>
+{% block body %}{% endblock %}
 </html>
 
 
@@ -34,20 +16,3 @@
 
 
 
-
-
-  <body>
-    <div class="container">
-      <div id="header" class="hero-unit">
-        <h1>Liste des personnes</h1>
-        <p>Déstiné aux mairie afin de gerer les personnes.</p>
-      </div>
-      <div class="row">
-
-<div id="menu" class="span4">
-  <h3>Accueil</h3>
-  <ul class="nav nav-pills nav-stacked">
-    <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
-    <li><a href="{{path('gestion_mairie_ajouterPersonne')}}">Ajouter une personne</a></li>
-  </ul>
-</div>
