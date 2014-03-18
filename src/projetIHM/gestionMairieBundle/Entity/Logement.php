@@ -13,8 +13,13 @@ use Doctrine\ORM\Mapping as ORM;
 class Logement
 {
     /**
+     * @ORM\ManyToOne(targetEntity="Habite", inversedBy="Logement")
+     * @ORM\JoinColumn(name="adresse", referencedColumnName="adresse")
+     */
+  protected $Habite;
+
+    /**
      * @var integer
-     *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -150,5 +155,28 @@ class Logement
     public function getCp()
     {
         return $this->cp;
+    }
+
+    /**
+     * Set Habite
+     *
+     * @param \projetIHM\gestionMairieBundle\Entity\Habite $habite
+     * @return Logement
+     */
+    public function setHabite(\projetIHM\gestionMairieBundle\Entity\Habite $habite = null)
+    {
+        $this->Habite = $habite;
+
+        return $this;
+    }
+
+    /**
+     * Get Habite
+     *
+     * @return \projetIHM\gestionMairieBundle\Entity\Habite 
+     */
+    public function getHabite()
+    {
+        return $this->Habite;
     }
 }

@@ -1,43 +1,46 @@
-{# src/Sdz/BlogBundle/Resources/views/Test/index.html.twig #}
+{# src/Sdz/BlogBundle/Resources/views/AjouterPersonne/ajouterPersonne.html.twig #}
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Gestion de l'état civil</title>
+    <title>AJOUTER UN MARIAGE</title>
 
 
     <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/bootstrap/css/bootstrap.css') }}" type="text/css" />
 
 
   </head>
-  {% block body %}
+
   <body>
     <div class="container">
       <div id="header" class="hero-unit">
-        <h1>Gestion de l'état civil</h1>
+        <h1>Ajouter un mariage</h1>
         <p>Déstiné aux mairie afin de gerer les personnes.</p>
       </div>
 
       <div class="row">
-        <div id="menu" class="span4">
+        <div id="menu" class="span3" style="background-color:rgb(238,238,238);padding-left:2%;">
           <h3>Accueil</h3>
           <ul class="nav nav-pills nav-stacked">
             <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
             <li><a href="{{path('gestion_mairie_personne')}}">Gerer les personnes</a></li>
-	    <li><a href="{{path('gestion_mairie_mariage')}}">Gérer les mariages</a></li>
-	    <li><a href="{{path('gestion_mairie_logement')}}">Gérer les logements</a></li>
-	    <li><a href="{{path('gestion_mairie_habite')}}">Gérer les emménagements/déménagements</a></li>
           </ul>
           
           
         </div>
       
 	<div id="content" class="span8">
-
-
-SALUT
+          {% block body %}
+	  <h3>Formulaire d'article</h3>
+	  <div class="well">
+	    <form method="post" {{ form_enctype(form) }}>
+	      {{ form_widget(form) }}
+	      <input type="submit" class="btn btn-primary" />
+	    </form>
+	  </div>
+          {% endblock %}
         </div>
       </div>
 
@@ -49,5 +52,4 @@ SALUT
     </div>
 
   </body>
-          {% endblock %}
 </html>

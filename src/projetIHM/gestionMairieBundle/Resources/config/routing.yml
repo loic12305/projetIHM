@@ -2,9 +2,16 @@ gestion_mairie_homepage:
     pattern:  /mairie
     defaults: { _controller: projetIHMgestionMairieBundle:Accueil:index }
 
+
+
+
+
+
+
 gestion_mairie_personne:
     pattern:  /mairie/personne
     defaults: { _controller: projetIHMgestionMairieBundle:Personne:index }
+
 
 gestion_mairie_ajouterPersonne:
     pattern:  /mairie/ajouterPersonne
@@ -21,6 +28,12 @@ gestion_mairie_modifierPersonne:
     defaults: { _controller: projetIHMgestionMairieBundle:Personne:modifierPersonne }
     requirements:
        id:  \d+
+
+
+
+
+
+
 
 
 gestion_mairie_mariage:
@@ -40,6 +53,12 @@ gestion_mairie_supprimerMariage:
 
 
 
+
+
+
+
+
+
 gestion_mairie_logement:
     pattern:  /mairie/logement
     defaults: { _controller: projetIHMgestionMairieBundle:Logement:index }
@@ -53,3 +72,18 @@ gestion_mairie_ajouterLogement:
 gestion_mairie_modifierLogement:
     pattern:  /mairie/modifierLogement/{id}
     defaults: { _controller: projetIHMgestionMairieBundle:Logement:modifierLogement }
+
+
+
+
+
+
+gestion_mairie_habite:
+    pattern:  /mairie/habite
+    defaults: { _controller: projetIHMgestionMairieBundle:Habite:index }
+
+
+gestion_mairie_ajouterHabite:
+    pattern:  /mairie/ajouterhabite
+    defaults: { _controller: projetIHMgestionMairieBundle:Habite:ajouterHabite }
+

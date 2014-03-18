@@ -1,0 +1,51 @@
+{% extends "projetIHMgestionMairieBundle::base.html.twig" %}
+
+{% block title %}Habitants{% endblock %}
+
+{% block body %}
+
+
+    <div class="container">
+      <div id="header" class="hero-unit">
+        <h1>Liste des habitants</h1>
+        <p>Déstiné aux mairie afin de gerer les personnes.</p>
+      </div>
+
+      <div class="row">
+        <div id="menu" class="span4">
+          <h3>Accueil</h3>
+          <ul class="nav nav-pills nav-stacked">
+            <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
+            <li><a href="{{path('gestion_mairie_ajouterHabite')}}">Ajouter un emménagement</a></li>
+	  </ul>
+          
+          
+        </div>
+      
+	<div id="content" class="span8">
+    
+          {% for habite in habites %}
+	 <table>
+	    <tr><td style="width: 500px;">{{habite.adresse}}</td><td></br><form action="{{ path('gestion_mairie_modifierPersonne', {'id': habite.id}) }}" method="post">
+		    <input type="submit" value="modifier" class="btn btn-default" />
+   		  </form></td><td></br><form action="{{ path('gestion_mairie_supprimerPersonne', {'id': habite.id}) }}" method="post">
+		    <input type="submit" value="Supprimer" class="btn btn-danger" />
+   		  </form>  
+		  
+</td></tr>
+</table>
+	  {% endfor %}
+
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>Univ'Nantes © 2014.</p>
+      </footer>
+    </div>
+
+
+{% endblock %}
+

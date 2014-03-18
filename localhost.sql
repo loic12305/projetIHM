@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mar 18 Mars 2014 à 18:36
--- Version du serveur: 5.6.14
--- Version de PHP: 5.5.6
+-- Généré le: Mer 19 Mars 2014 à 00:58
+-- Version du serveur: 5.6.12
+-- Version de PHP: 5.5.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,28 @@ SET time_zone = "+00:00";
 --
 -- Base de données: `projetIHM`
 --
+CREATE DATABASE IF NOT EXISTS `projetIHM` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `projetIHM`;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Habite`
+--
+
+CREATE TABLE IF NOT EXISTS `Habite` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `numSecu` int(11) NOT NULL,
+  `adresse` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `Habite`
+--
+
+INSERT INTO `Habite` (`id`, `numSecu`, `adresse`) VALUES
+(1, 123, 1);
 
 -- --------------------------------------------------------
 
@@ -32,6 +54,7 @@ CREATE TABLE IF NOT EXISTS `Logement` (
   `nomRue` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `ville` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `cp` int(11) NOT NULL,
+  `adresse` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
@@ -39,8 +62,8 @@ CREATE TABLE IF NOT EXISTS `Logement` (
 -- Contenu de la table `Logement`
 --
 
-INSERT INTO `Logement` (`id`, `numRue`, `nomRue`, `ville`, `cp`) VALUES
-(1, 39, 'rue des Maraichers', 'Nantes', 44000);
+INSERT INTO `Logement` (`id`, `numRue`, `nomRue`, `ville`, `cp`, `adresse`) VALUES
+(1, 10, 'rue des Maraichers', 'Nantes', 44000, NULL);
 
 -- --------------------------------------------------------
 
@@ -89,6 +112,16 @@ INSERT INTO `Personne` (`id`, `Nsecu`, `nom`, `prenom`, `dateNai`, `villeNai`, `
 (11, 123, 'ENT', 'Loïc', '2009-01-01', 'Amiens', 'M'),
 (12, 852369, 'BLOT', 'PA', '2012-08-10', 'Le Mans', 'M'),
 (13, 4564566, 'BERTE', 'Agathe', '1994-05-12', 'Le Mans', 'F');
+
+--
+-- Contraintes pour les tables exportées
+--
+
+--
+-- Contraintes pour la table `Habite`
+--
+ALTER TABLE `Habite`
+  ADD CONSTRAINT `FK_5639915DBF396750` FOREIGN KEY (`id`) REFERENCES `Logement` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
