@@ -5,14 +5,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>LES MARIAGES</title>
+    <title>AJOUTER PERSONNE</title>
 
 
     <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/bootstrap/css/bootstrap.css') }}" type="text/css" />
 
 
 
-    <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/stylesheet.css') }}" type="text/css" />
+   <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/stylesheet.css') }}" type="text/css" />
 
 
 
@@ -21,7 +21,7 @@
   <body>
     <div class="container">
       <div id="header" class="hero-unit">
-        <h1>Liste des mariages</h1>
+        <h1>Liste des personnes</h1>
         <p>Déstiné aux mairie afin de gerer les personnes.</p>
       </div>
 
@@ -30,23 +30,24 @@
           <h3>Accueil</h3>
           <ul class="nav nav-pills nav-stacked">
             <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
-            <li><a href="{{path('gestion_mairie_ajouterMariage')}}">Ajouter un mariage</a></li>
+            <li><a href="{{path('gestion_mairie_ajouterPersonne')}}">Ajouter une personne</a></li>
 	  </ul>
           
           
         </div>
-	
+      
 	<div id="content" class="span8">
           {% block body %}
-          {% for mariage in mariages %}
+          {% for personne in personnes %}
 	  <table>
-	    <tr><td>{{mariage.numSecu1 }} marié avec {{ mariage.numSecu2 }} le {{ mariage.dateMariage|date('Y-m-d') }} à {{ mariage.villeMairie }}</td><td></br>
-<td></br><form action="{{ path('gestion_mairie_supprimerMariage', {'id': mariage.id}) }}" method="POST">
-		  <input type="submit" value="Divorcer" class="btn btn-danger" />
-   		</form>  
-		
-	    </td></tr>
-	  </table>
+	    <tr><td style="width: 500px;">{{personne.Nsecu }} - {{personne.nom }} {{ personne.prenom }} né le {{ personne.dateNai|date('Y-m-d') }} à {{ personne.villeNai }}</td><td></br><form action="{{ path('gestion_mairie_modifierPersonne', {'id': personne.id}) }}" method="post">
+		    <input type="submit" value="modifier" class="btn btn-default" />
+   		  </form></td><td></br><form action="{{ path('gestion_mairie_supprimerPersonne', {'id': personne.id}) }}" method="post">
+		    <input type="submit" value="Supprimer" class="btn btn-danger" />
+   		  </form>  
+		  
+</td></tr>
+</table>
 	  {% endfor %}
 
 	  {% endblock %}

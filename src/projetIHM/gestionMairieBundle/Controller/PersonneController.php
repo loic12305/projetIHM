@@ -68,6 +68,7 @@ class PersonneController extends Controller
   public function supprimerPersonneAction(Personne $personne)
   {
 
+
     $request = $this->getRequest();
     if ($request->getMethod() == 'POST') {
       

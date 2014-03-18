@@ -101,7 +101,7 @@ class MariageController extends Controller
 
     $request = $this->getRequest();
     if ($request->getMethod() == 'POST') {
-      
+ 
       // On supprime la personne
       $em = $this->getDoctrine()->getManager();
       $em->remove($mariage);
