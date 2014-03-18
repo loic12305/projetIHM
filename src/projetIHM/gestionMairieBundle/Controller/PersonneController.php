@@ -58,6 +58,7 @@ class PersonneController extends Controller
       }
     }
 
+
     return $this->render('projetIHMgestionMairieBundle:Personne:ajouterPersonne.html.twig',array('form' => $form->createView()));
     
   }

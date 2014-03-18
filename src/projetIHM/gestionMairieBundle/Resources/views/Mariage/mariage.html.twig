@@ -12,7 +12,7 @@
 
 
 
-   <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/stylesheet.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/stylesheet.css') }}" type="text/css" />
 
 
 
@@ -35,19 +35,20 @@
           
           
         </div>
-      
+	
 	<div id="content" class="span8">
           {% block body %}
           {% for mariage in mariages %}
 	  <table>
-	    <tr><td>{{mariage.id }} - {{mariage.numSecu1 }} marié à {{ mariage.numSecu2 }} le {{ mariage.dateMariage('Y-m-d') }} à {{ mariage.villeMairie }}</td><td></br><form action="{{ path('gestion_mairie_modifierPersonne', {'id': personne.id}) }}" method="post">
-		    <input type="submit" value="modifier" class="btn btn-default" />
-   		  </form></td><td></br><form action="{{ path('gestion_mairie_supprimerMariage', {'id': mariage.id}) }}" method="post">
-		    <input type="submit" value="Supprimer" class="btn btn-danger" />
-   		  </form>  
-		  
-</td></tr>
-</table>
+	    <tr><td>{{mariage.numSecu1 }} marié avec {{ mariage.numSecu2 }} le {{ mariage.dateMariage|date('Y-m-d') }} à {{ mariage.villeMairie }}</td><td></br>
+		<form action="{{ path('gestion_mairie_modifierMariage', {'id': mariage.id}) }}" method="post">
+		  <input type="submit" value="modifier" class="btn btn-default" />
+   	      </form></td><td></br><form action="{{ path('gestion_mairie_supprimerMariage', {'id': mariage.id}) }}" method="POST">
+		  <input type="submit" value="Supprimer" class="btn btn-danger" />
+   		</form>  
+		
+	    </td></tr>
+	  </table>
 	  {% endfor %}
 
 	  {% endblock %}

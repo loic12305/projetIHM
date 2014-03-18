@@ -20,6 +20,17 @@ class MariageType extends AbstractType
             ->add('dateMariage')
             ->add('villeMarie')
         ;
+
+
+
+
+    //modification de l'interval année
+    $builder->add('dateMariage','date', array(
+				       'years' => range(date('Y'),1920),
+					   ));
+
+
+
     }
     
     /**

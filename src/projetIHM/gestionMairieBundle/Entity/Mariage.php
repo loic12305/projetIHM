@@ -45,9 +45,9 @@ class Mariage
     /**
      * @var string
      *
-     * @ORM\Column(name="villeMarie", type="string", length=30)
+     * @ORM\Column(name="villeMairie", type="string", length=30)
      */
-    private $villeMarie;
+    private $villeMairie;
 
 
     /**
@@ -130,25 +130,25 @@ class Mariage
     }
 
     /**
-     * Set villeMarie
+     * Set villeMairie
      *
-     * @param string $villeMarie
+     * @param string $villeMairie
      * @return Mariage
      */
-    public function setVilleMarie($villeMarie)
+    public function setVilleMairie($villeMairie)
     {
-        $this->villeMarie = $villeMarie;
+        $this->villeMairie = $villeMairie;
 
         return $this;
     }
 
     /**
-     * Get villeMarie
+     * Get villeMairie
      *
      * @return string 
      */
-    public function getVilleMarie()
+    public function getVilleMairie()
     {
-        return $this->villeMarie;
+        return $this->villeMairie;
     }
 }

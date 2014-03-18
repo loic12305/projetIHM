@@ -22,6 +22,17 @@ class PersonneType extends AbstractType
             ->add('villeNai')
             ->add('sexe')
         ;
+
+    //modification de l'interval année
+    $builder->add('dateNai','date', array(
+				       'years' => range(date('Y'),1920),
+					   ));
+
+
+
+
+
+
     }
     
     /**

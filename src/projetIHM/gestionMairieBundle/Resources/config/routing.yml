@@ -32,3 +32,15 @@ gestion_mairie_ajouterMariage:
     pattern:  /mairie/ajouterMariage
     defaults: { _controller: projetIHMgestionMairieBundle:Mariage:ajouterMariage }
 
+
+
+gestion_mairie_modifierMariage:
+    pattern:  /mairie/modifierMariage
+    defaults: { _controller: projetIHMgestionMairieBundle:Mariage:modifierMariage }
+
+
+
+gestion_mairie_supprimerMariage:
+    pattern:  /mairie/supprimerMariage
+    defaults: { _controller: projetIHMgestionMairieBundle:Mariage:supprimerMariage }
+

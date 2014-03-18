@@ -40,7 +40,7 @@
           {% block body %}
           {% for personne in personnes %}
 	  <table>
-	    <tr><td>{{personne.id }}  {{personne.Nsecu }} - {{personne.nom }} {{ personne.prenom }} né le {{ personne.dateNai|date('Y-m-d') }} à {{ personne.villeNai }}</td><td></br><form action="{{ path('gestion_mairie_modifierPersonne', {'id': personne.id}) }}" method="post">
+	    <tr><td style="width: 500px;">{{personne.Nsecu }} - {{personne.nom }} {{ personne.prenom }} né le {{ personne.dateNai|date('Y-m-d') }} à {{ personne.villeNai }}</td><td></br><form action="{{ path('gestion_mairie_modifierPersonne', {'id': personne.id}) }}" method="post">
 		    <input type="submit" value="modifier" class="btn btn-default" />
    		  </form></td><td></br><form action="{{ path('gestion_mairie_supprimerPersonne', {'id': personne.id}) }}" method="post">
 		    <input type="submit" value="Supprimer" class="btn btn-danger" />
