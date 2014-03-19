@@ -87,3 +87,8 @@ gestion_mairie_ajouterHabite:
     pattern:  /mairie/ajouterhabite
     defaults: { _controller: projetIHMgestionMairieBundle:Habite:ajouterHabite }
 
+gestion_mairie_supprimerHabite:
+    pattern:  /mairie/supprimerHabite/{id}
+    defaults: { _controller: projetIHMgestionMairieBundle:Habite:supprimerHabite }
+    requirements:
+       id:  \d+

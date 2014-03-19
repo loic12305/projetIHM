@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 19 Mars 2014 à 11:03
+-- Généré le: Mer 19 Mars 2014 à 16:36
 -- Version du serveur: 5.6.14
 -- Version de PHP: 5.5.6
 
@@ -33,14 +33,14 @@ CREATE TABLE IF NOT EXISTS `Habite` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_5639915DA21BD112` (`personne_id`),
   UNIQUE KEY `UNIQ_5639915D58ABF955` (`logement_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
 -- Contenu de la table `Habite`
 --
 
 INSERT INTO `Habite` (`id`, `personne_id`, `logement_id`) VALUES
-(1, 12, 2);
+(2, 13, 2);
 
 -- --------------------------------------------------------
 
@@ -55,14 +55,15 @@ CREATE TABLE IF NOT EXISTS `Logement` (
   `ville` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `cp` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `Logement`
 --
 
 INSERT INTO `Logement` (`id`, `numRue`, `nomRue`, `ville`, `cp`) VALUES
-(2, 42, 'cons', 'Le mans', 42000);
+(2, 42, 'rue de la mouche', 'Le mans', 42000),
+(3, 39, 'rue des Maraichers', 'Nantes', 44300);
 
 -- --------------------------------------------------------
 
@@ -72,19 +73,21 @@ INSERT INTO `Logement` (`id`, `numRue`, `nomRue`, `ville`, `cp`) VALUES
 
 CREATE TABLE IF NOT EXISTS `Mariage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `numSecu1` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
-  `numSecu2` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `dateMariage` date NOT NULL,
   `villeMairie` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+  `personne1_id` int(11) DEFAULT NULL,
+  `personne2_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_E055D5BE2577470A` (`personne1_id`),
+  UNIQUE KEY `UNIQ_E055D5BE37C2E8E4` (`personne2_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `Mariage`
 --
 
-INSERT INTO `Mariage` (`id`, `numSecu1`, `numSecu2`, `dateMariage`, `villeMairie`) VALUES
-(2, '852369', '4564566', '2009-03-01', 'Paris');
+INSERT INTO `Mariage` (`id`, `dateMariage`, `villeMairie`, `personne1_id`, `personne2_id`) VALUES
+(3, '2009-01-01', 'Le Mans', 12, 13);
 
 -- --------------------------------------------------------
 
@@ -122,6 +125,13 @@ INSERT INTO `Personne` (`id`, `Nsecu`, `nom`, `prenom`, `dateNai`, `villeNai`, `
 ALTER TABLE `Habite`
   ADD CONSTRAINT `FK_5639915D58ABF955` FOREIGN KEY (`logement_id`) REFERENCES `Logement` (`id`),
   ADD CONSTRAINT `FK_5639915DA21BD112` FOREIGN KEY (`personne_id`) REFERENCES `Personne` (`id`);
+
+--
+-- Contraintes pour la table `Mariage`
+--
+ALTER TABLE `Mariage`
+  ADD CONSTRAINT `FK_E055D5BE37C2E8E4` FOREIGN KEY (`personne2_id`) REFERENCES `Personne` (`id`),
+  ADD CONSTRAINT `FK_E055D5BE2577470A` FOREIGN KEY (`personne1_id`) REFERENCES `Personne` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

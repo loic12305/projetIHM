@@ -15,22 +15,11 @@ class MariageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('numSecu1')
-            ->add('numSecu2')
             ->add('dateMariage')
             ->add('villeMairie')
+            ->add('personne1')
+            ->add('personne2')
         ;
-
-
-
-
-    //modification de l'interval année
-    $builder->add('dateMariage','date', array(
-				       'years' => range(date('Y'),1920),
-					   ));
-
-
-
     }
     
     /**

@@ -26,7 +26,7 @@
       </div>
 
       <div class="row">
-        <div id="menu" class="span4">
+        <div id="menu" class="span3">
           <h3>Accueil</h3>
           <ul class="nav nav-pills nav-stacked">
             <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
@@ -40,7 +40,7 @@
           {% block body %}
           {% for mariage in mariages %}
 	  <table>
-	    <tr><td>{{mariage.numSecu1 }} marié avec {{ mariage.numSecu2 }} le {{ mariage.dateMariage|date('Y-m-d') }} à {{ mariage.villeMairie }}</td><td></br>
+	    <tr><td>{{mariage.personne1 }} <b>marié avec </b> {{ mariage.personne2 }} </br>le {{ mariage.dateMariage|date('Y-m-d') }} à {{ mariage.villeMairie }}</td><td></br>
 <td></br><form action="{{ path('gestion_mairie_supprimerMariage', {'id': mariage.id}) }}" method="POST">
 		  <input type="submit" value="Divorcer" class="btn btn-danger" />
    		</form>  

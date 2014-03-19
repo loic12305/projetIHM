@@ -22,18 +22,15 @@ class Mariage
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="numSecu1", type="string", length=15)
+     * @ORM\OneToOne(targetEntity="Personne", cascade={"persist"})
      */
-    private $numSecu1;
+
+    private $personne1;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="numSecu2", type="string", length=15)
+     * @ORM\OneToOne(targetEntity="Personne", cascade={"persist"})
      */
-    private $numSecu2;
+    private $personne2;
 
     /**
      * @var \DateTime
@@ -50,6 +47,7 @@ class Mariage
     private $villeMairie;
 
 
+
     /**
      * Get id
      *
@@ -58,52 +56,6 @@ class Mariage
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set numSecu1
-     *
-     * @param string $numSecu1
-     * @return Mariage
-     */
-    public function setNumSecu1($numSecu1)
-    {
-        $this->numSecu1 = $numSecu1;
-
-        return $this;
-    }
-
-    /**
-     * Get numSecu1
-     *
-     * @return string 
-     */
-    public function getNumSecu1()
-    {
-        return $this->numSecu1;
-    }
-
-    /**
-     * Set numSecu2
-     *
-     * @param string $numSecu2
-     * @return Mariage
-     */
-    public function setNumSecu2($numSecu2)
-    {
-        $this->numSecu2 = $numSecu2;
-
-        return $this;
-    }
-
-    /**
-     * Get numSecu2
-     *
-     * @return string 
-     */
-    public function getNumSecu2()
-    {
-        return $this->numSecu2;
     }
 
     /**
@@ -150,5 +102,51 @@ class Mariage
     public function getVilleMairie()
     {
         return $this->villeMairie;
+    }
+
+    /**
+     * Set personne1
+     *
+     * @param \projetIHM\gestionMairieBundle\Entity\Personne $personne1
+     * @return Mariage
+     */
+    public function setPersonne1(\projetIHM\gestionMairieBundle\Entity\Personne $personne1 = null)
+    {
+        $this->personne1 = $personne1;
+
+        return $this;
+    }
+
+    /**
+     * Get personne1
+     *
+     * @return \projetIHM\gestionMairieBundle\Entity\Personne 
+     */
+    public function getPersonne1()
+    {
+        return $this->personne1;
+    }
+
+    /**
+     * Set personne2
+     *
+     * @param \projetIHM\gestionMairieBundle\Entity\Personne $personne2
+     * @return Mariage
+     */
+    public function setPersonne2(\projetIHM\gestionMairieBundle\Entity\Personne $personne2 = null)
+    {
+        $this->personne2 = $personne2;
+
+        return $this;
+    }
+
+    /**
+     * Get personne2
+     *
+     * @return \projetIHM\gestionMairieBundle\Entity\Personne 
+     */
+    public function getPersonne2()
+    {
+        return $this->personne2;
     }
 }

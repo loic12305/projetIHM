@@ -21,12 +21,12 @@
   <body>
     <div class="container">
       <div id="header" class="hero-unit">
-        <h1>Liste des logements</h1>
+        <h1>Liste des habitations</h1>
         <p>Déstiné aux mairie afin de gerer les personnes.</p>
       </div>
 
       <div class="row">
-        <div id="menu" class="span4">
+        <div id="menu" class="span3">
           <h3>Accueil</h3>
           <ul class="nav nav-pills nav-stacked">
             <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
@@ -41,11 +41,10 @@
           {% block body %}
           {% for habite in habites %}
 	  <table>
-	    <tr><td style="width: 500px;">{{habite.personne }} <b>habite au :</b> {{habite.logement}}</td><td></br><form action="{{ path('gestion_mairie_modifierLogement', {'id': habite.id}) }}" method="post">
-		    <input type="submit" value="modifier" class="btn btn-default" />
-   		  </form></td><td></br><form action="{{ path('gestion_mairie_modifierLogement', {'id': habite.id}) }}" method="post">
-		    <input type="submit" value="Supprimer" class="btn btn-danger" />
-   		  </form>  
+	    <tr><td style="width: 500px;">{{habite.personne }} <b>habite au :</b> {{habite.logement}}</td><td></br></td><td></br>
+		<form action="{{ path('gestion_mairie_supprimerHabite', {'id': habite.id}) }}" method="post">
+		    <input type="submit" value="Déménagement" class="btn btn-danger" />
+   		</form>  
 		  
 </td></tr>
 </table>

@@ -47,10 +47,8 @@ class HabiteController extends Controller
 
   public function ajouterHabiteAction()
   {
-   
-    // On crée un objet Habite
+       // On crée un objet Habite
     $habite = new Habite();
-    $choices          = [];
     
 
 
@@ -73,6 +71,29 @@ class HabiteController extends Controller
       return $this->render('projetIHMgestionMairieBundle:Habite:ajouterHabite.html.twig',array('form' => $form->createView()));
     
   }
+
+
+
+  public function supprimerHabiteAction(Habite $habite)
+  {
+
+
+    $request = $this->getRequest();
+    if ($request->getMethod() == 'POST') {
+      
+      // On supprime la personne
+      $em = $this->getDoctrine()->getManager();
+      $em->remove($habite);
+      $em->flush();
+
+      // Puis on redirige vers l'accueil
+      return $this->redirect($this->generateUrl('gestion_mairie_habite'));
+    }      
+
+  }
+
+
+
 
 
 
