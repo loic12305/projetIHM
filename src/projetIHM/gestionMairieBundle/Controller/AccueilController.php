@@ -10,4 +10,6 @@ class AccueilController extends Controller
     {
 	return $this->render('projetIHMgestionMairieBundle:Accueil:index.html.twig');
     }
+
+
 }

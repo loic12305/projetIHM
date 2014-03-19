@@ -1,40 +1,30 @@
 {# src/Sdz/BlogBundle/Resources/views/AjouterPersonne/ajouterPersonne.html.twig #}
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% extends 'projetIHMgestionMairieBundle::base.html.twig' %}
 
-    <title>MODIFIER LOGEMENT</title>
+{% block title%}Modifier une foyer{% endblock%}
 
-
-    <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/bootstrap/css/bootstrap.css') }}" type="text/css" />
-
-
-  </head>
-
-  <body>
+{% block body%}
     <div class="container">
       <div id="header" class="hero-unit">
-        <h1>Modifier un logement</h1>
-        <p>Déstiné aux mairie afin de gerer les personnes.</p>
+        <h1>{{'Modifier un foyer'|trans}}</h1>
+        <p>{{'Déstiné aux mairie afin de gerer les personnes.'|trans}}</p>
       </div>
 
       <div class="row">
         <div id="menu" class="span3" style="background-color:rgb(238,238,238);padding-left:2%;">
-          <h3>Accueil</h3>
+          <h3>{{'Accueil'|trans}}</h3>
           <ul class="nav nav-pills nav-stacked">
-            <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
-            <li><a href="{{path('gestion_mairie_personne')}}">Gerer les personnes</a></li>
+            <li><a href="{{path('gestion_mairie_homepage')}}">{{'Accueil du Site'|trans}}</a></li>
+            <li><a href="{{path('gestion_mairie_personne')}}">{{'Gerer les personnes'|trans}}</a></li>
           </ul>
           
           
         </div>
       
 	<div id="content" class="span8">
-          {% block body %}
-	  <h3>Formulaire d'article</h3>
-	  <div class="well">
+
+	 <div class="well">
 	    <form method="GET" {{ form_enctype(form) }}>
 
 	      {{form_widget(form)}}
@@ -42,7 +32,7 @@
 	      <input type="submit" class="btn btn-primary" />
 	    </form>
 	  </div>
-          {% endblock %}
+
         </div>
       </div>
 
@@ -52,6 +42,4 @@
         <p>Univ'Nantes © 2014.</p>
       </footer>
     </div>
-
-  </body>
-</html>
+    {% endblock %}

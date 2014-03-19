@@ -1,9 +1,6 @@
 gestion_mairie_homepage:
-    pattern:  /mairie
+    pattern: /mairie
     defaults: { _controller: projetIHMgestionMairieBundle:Accueil:index }
-
-
-
 
 
 

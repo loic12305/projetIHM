@@ -8,16 +8,16 @@
 
 <div class="container">
   <div id="header" class="hero-unit">
-    <h1>Modifier un logement</h1>
-    <p>Déstiné aux mairie afin de gerer les logements.</p>
+    <h1>{{'Modifier un logement'|trans}}</h1>
+    <p>{{'Déstiné aux mairie afin de gerer les logements.'|trans}}</p>
   </div>
 
   <div class="row">
     <div id="menu" class="span3">
-      <h3>Accueil</h3>
+      <h3>{{'Accueil'|trans}}</h3>
       <ul class="nav nav-pills nav-stacked">
-        <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
-        <li><a href="{{path('gestion_mairie_logement')}}">Gerer les logements</a></li>
+        <li><a href="{{path('gestion_mairie_homepage')}}">{{'Accueil du Site'|trans}}</a></li>
+        <li><a href="{{path('gestion_mairie_logement')}}">{{'Gerer les logements'|trans}}</a></li>
       </ul>
       
       
@@ -25,7 +25,7 @@
     
     <div id="content" class="span8">
 
-      <h3>Formulaire d'article</h3>
+      <h3>{{'Formulaire de logement'|trans}}</h3>
       <div class="well">
 	<form method="GET" {{ form_enctype(form) }}>
 

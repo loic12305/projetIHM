@@ -7,16 +7,16 @@
 {% block body%}
 <div class="container">
   <div id="header" class="hero-unit">
-    <h1>Liste des logements</h1>
-    <p>Déstiné aux mairie afin de gerer les logements.</p>
+    <h1>{{'Liste des logements'|trans}}</h1>
+    <p>{{'Déstiné aux mairie afin de gerer les logements'|trans}}.</p>
   </div>
 
   <div class="row">
     <div id="menu" class="span3">
-      <h3>Accueil</h3>
+      <h3>{{'Accueil'|trans}}</h3>
       <ul class="nav nav-pills nav-stacked">
-        <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
-        <li><a href="{{path('gestion_mairie_ajouterLogement')}}">Ajouter un logement</a></li>
+        <li><a href="{{path('gestion_mairie_homepage')}}">{{'Accueil du Site'|trans}}</a></li>
+        <li><a href="{{path('gestion_mairie_ajouterLogement')}}">{{'Ajouter un logement'|trans}}</a></li>
 
       </ul>
       
@@ -28,9 +28,9 @@
       {% for logement in logements %}
       <table>
 	<tr><td style="width: 500px;">{{logement.id }} - {{logement.numRue }} {{ logement.nomRue }} {{ logement.cp }} {{logement.ville}}</td><td></br><form action="{{ path('gestion_mairie_modifierLogement', {'id': logement.id}) }}" method="post">
-	      <input type="submit" value="modifier" class="btn btn-default" />
+	      <input type="submit" value="{{'modifier'|trans}}" class="btn btn-default" />
    	  </form></td><td></br><form action="{{ path('gestion_mairie_modifierLogement', {'id': logement.id}) }}" method="post">
-	      <input type="submit" value="Supprimer" class="btn btn-danger" />
+	      <input type="submit" value="{{'Supprimer'|trans}}" class="btn btn-danger" />
    	    </form>  
 	    
 	</td></tr>

@@ -8,16 +8,16 @@
 
 <div class="container">
   <div id="header" class="hero-unit">
-    <h1>Liste des habitations</h1>
-    <p>Déstiné aux mairie afin de gerer déménagements.</p>
+    <h1>{{'Liste des habitations'|trans}}</h1>
+    <p>{{'Déstiné aux mairie afin de gerer déménagements.'|trans}}</p>
   </div>
 
   <div class="row">
     <div id="menu" class="span3">
-      <h3>Accueil</h3>
+      <h3>{{'Accueil'|trans}}</h3>
       <ul class="nav nav-pills nav-stacked">
-        <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
-        <li><a href="{{path('gestion_mairie_ajouterHabite')}}">Ajouter un em(dé)ménagement</a></li>
+        <li><a href="{{path('gestion_mairie_homepage')}}">{{'Accueil du Site'|trans}}</a></li>
+        <li><a href="{{path('gestion_mairie_ajouterHabite')}}">{{'Ajouter un em(dé)ménagement'|trans}}</a></li>
 
       </ul>
       
@@ -28,9 +28,9 @@
       
       {% for habite in habites %}
       <table>
-	<tr><td style="width: 500px;">{{habite.personne }} <b>habite au :</b> {{habite.logement}}</td><td></br></td><td></br>
+	<tr><td style="width: 500px;">{{habite.personne }} <b>{{'habite au'|trans}} :</b> {{habite.logement}}</td><td></br></td><td></br>
 	    <form action="{{ path('gestion_mairie_supprimerHabite', {'id': habite.id}) }}" method="post">
-	      <input type="submit" value="Déménagement" class="btn btn-danger" />
+	      <input type="submit" value="{{'Déménagement'|trans}}" class="btn btn-danger" />
    	    </form>  
 	    
 	</td></tr>

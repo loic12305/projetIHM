@@ -1,4 +1,6 @@
-projet_ih_mgestion_mairie:
+projetihm_gestion_mairie:
     resource: "@projetIHMgestionMairieBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
+    requirements:
+        _locale: en|fr
 

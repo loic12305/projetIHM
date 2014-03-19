@@ -10,16 +10,16 @@
 
     <div class="container">
       <div id="header" class="hero-unit">
-        <h1>Liste des mariages</h1>
-        <p>Déstiné aux mairie afin de gerer les mariages.</p>
+        <h1>{{'Liste des mariages'|trans}}</h1>
+        <p>{{'Déstiné aux mairie afin de gerer les mariages'|trans}}.</p>
       </div>
 
       <div class="row">
         <div id="menu" class="span3">
-          <h3>Accueil</h3>
+          <h3>{{'Accueil'|trans}}</h3>
           <ul class="nav nav-pills nav-stacked">
-            <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
-            <li><a href="{{path('gestion_mairie_ajouterMariage')}}">Ajouter un mariage</a></li>
+            <li><a href="{{path('gestion_mairie_homepage')}}">{{'Accueil du Site'|trans}}</a></li>
+            <li><a href="{{path('gestion_mairie_ajouterMariage')}}">{{'Ajouter un mariage'|trans}}</a></li>
 	  </ul>
           
           
@@ -29,9 +29,9 @@
          
           {% for mariage in mariages %}
 	  <table>
-	    <tr><td>{{mariage.personne1 }} <b>marié avec </b> {{ mariage.personne2 }} </br>le {{ mariage.dateMariage|date('Y-m-d') }} à {{ mariage.villeMairie }}</td><td></br>
+	    <tr><td>{{mariage.personne1 }} <b>{{'marié avec'|trans}} </b> {{ mariage.personne2 }} </br>le {{ mariage.dateMariage|date('Y-m-d') }} à {{ mariage.villeMairie }}</td><td></br>
 <td></br><form action="{{ path('gestion_mairie_supprimerMariage', {'id': mariage.id}) }}" method="POST">
-		  <input type="submit" value="Divorcer" class="btn btn-danger" />
+		  <input type="submit" value="{{'Divorcer'|trans}}" class="btn btn-danger" />
    		</form>  
 		
 	    </td></tr>
