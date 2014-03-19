@@ -15,8 +15,8 @@ class HabiteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('numSecu')
-            ->add('adresse')
+            ->add('personne')
+            ->add('logement')
         ;
     }
     

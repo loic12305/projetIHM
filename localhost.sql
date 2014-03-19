@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 19 Mars 2014 à 00:58
--- Version du serveur: 5.6.12
--- Version de PHP: 5.5.3
+-- Généré le: Mer 19 Mars 2014 à 11:03
+-- Version du serveur: 5.6.14
+-- Version de PHP: 5.5.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données: `projetIHM`
 --
-CREATE DATABASE IF NOT EXISTS `projetIHM` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `projetIHM`;
 
 -- --------------------------------------------------------
 
@@ -30,17 +28,19 @@ USE `projetIHM`;
 
 CREATE TABLE IF NOT EXISTS `Habite` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `numSecu` int(11) NOT NULL,
-  `adresse` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  `personne_id` int(11) DEFAULT NULL,
+  `logement_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_5639915DA21BD112` (`personne_id`),
+  UNIQUE KEY `UNIQ_5639915D58ABF955` (`logement_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `Habite`
 --
 
-INSERT INTO `Habite` (`id`, `numSecu`, `adresse`) VALUES
-(1, 123, 1);
+INSERT INTO `Habite` (`id`, `personne_id`, `logement_id`) VALUES
+(1, 12, 2);
 
 -- --------------------------------------------------------
 
@@ -54,16 +54,15 @@ CREATE TABLE IF NOT EXISTS `Logement` (
   `nomRue` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `ville` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `cp` int(11) NOT NULL,
-  `adresse` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
 -- Contenu de la table `Logement`
 --
 
-INSERT INTO `Logement` (`id`, `numRue`, `nomRue`, `ville`, `cp`, `adresse`) VALUES
-(1, 10, 'rue des Maraichers', 'Nantes', 44000, NULL);
+INSERT INTO `Logement` (`id`, `numRue`, `nomRue`, `ville`, `cp`) VALUES
+(2, 42, 'cons', 'Le mans', 42000);
 
 -- --------------------------------------------------------
 
@@ -121,7 +120,8 @@ INSERT INTO `Personne` (`id`, `Nsecu`, `nom`, `prenom`, `dateNai`, `villeNai`, `
 -- Contraintes pour la table `Habite`
 --
 ALTER TABLE `Habite`
-  ADD CONSTRAINT `FK_5639915DBF396750` FOREIGN KEY (`id`) REFERENCES `Logement` (`id`);
+  ADD CONSTRAINT `FK_5639915D58ABF955` FOREIGN KEY (`logement_id`) REFERENCES `Logement` (`id`),
+  ADD CONSTRAINT `FK_5639915DA21BD112` FOREIGN KEY (`personne_id`) REFERENCES `Personne` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

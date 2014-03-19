@@ -21,32 +21,17 @@ class Habite
      */
     private $id;
 
-
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="numSecu", type="integer")
+     * @ORM\OneToOne(targetEntity="Personne", cascade={"persist"})
      */
-    private $numSecu;
 
-    /**
-     * @var integer
-     * @ORM\Column(name="adresse", type="integer")
-     */
-    private $adresse;
-
-
-
+    private $personne;
 
 
     /**
-     * @ORM\OneToOne(targetEntity="Logement")
-     * @ORM\JoinColumn(name="id", referencedColumnName="id")
+     * @ORM\OneToOne(targetEntity="Logement", cascade={"persist"})
      */
-    protected $logement;
-
-
-
+    private $logement;
 
 
     /**
@@ -59,50 +44,28 @@ class Habite
         return $this->id;
     }
 
+
     /**
-     * Set numSecu
+     * Set personne
      *
-     * @param integer $numSecu
+     * @param \projetIHM\gestionMairieBundle\Entity\Personne $personne
      * @return Habite
      */
-    public function setNumSecu($numSecu)
+    public function setPersonne(\projetIHM\gestionMairieBundle\Entity\Personne $personne = null)
     {
-        $this->numSecu = $numSecu;
+        $this->personne = $personne;
 
         return $this;
     }
 
     /**
-     * Get numSecu
+     * Get personne
      *
-     * @return integer 
+     * @return \projetIHM\gestionMairieBundle\Entity\Personne 
      */
-    public function getNumSecu()
+    public function getPersonne()
     {
-        return $this->numSecu;
-    }
-
-    /**
-     * Set adresse
-     *
-     * @param integer $adresse
-     * @return Habite
-     */
-    public function setAdresse($adresse)
-    {
-        $this->adresse = $adresse;
-
-        return $this;
-    }
-
-    /**
-     * Get adresse
-     *
-     * @return integer 
-     */
-    public function getAdresse()
-    {
-        return $this->adresse;
+        return $this->personne;
     }
 
     /**

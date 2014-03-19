@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>AJOUTER LOGEMENT</title>
+    <title>MODIFIER LOGEMENT</title>
 
 
     <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/bootstrap/css/bootstrap.css') }}" type="text/css" />
@@ -16,7 +16,7 @@
   <body>
     <div class="container">
       <div id="header" class="hero-unit">
-        <h1>Ajouter un logement</h1>
+        <h1>Modifier un logement</h1>
         <p>Déstiné aux mairie afin de gerer les personnes.</p>
       </div>
 
@@ -25,7 +25,7 @@
           <h3>Accueil</h3>
           <ul class="nav nav-pills nav-stacked">
             <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
-            <li><a href="{{path('gestion_mairie_logement')}}">Gerer les logements</a></li>
+            <li><a href="{{path('gestion_mairie_personne')}}">Gerer les personnes</a></li>
           </ul>
           
           
@@ -35,8 +35,10 @@
           {% block body %}
 	  <h3>Formulaire d'article</h3>
 	  <div class="well">
-	    <form method="post" {{ form_enctype(form) }}>
-	      {{ form_widget(form) }}
+	    <form method="GET" {{ form_enctype(form) }}>
+
+	      {{form_widget(form)}}
+
 	      <input type="submit" class="btn btn-primary" />
 	    </form>
 	  </div>

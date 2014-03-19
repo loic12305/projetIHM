@@ -211,4 +211,13 @@ class Personne
     {
         return $this->sexe;
     }
+
+
+    public function __toString()
+    {
+      return (string) $this->getNom()." ".$this->getPrenom()." - Nsecu ".$this->getNsecu();
+    }
+
+
+
 }
