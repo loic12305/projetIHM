@@ -1,65 +1,49 @@
-{# src/Sdz/BlogBundle/Resources/views/AjouterPersonne/ajouterPersonne.html.twig #}
+{# src/Sdz/BlogBundle/Resources/views/AjouterPersonne/habite.html.twig #}
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% extends 'projetIHMgestionMairieBundle::base.html.twig' %}
 
-    <title>Liste des logements</title>
+{% block title%}Gérer les déménagements{% endblock%}
 
+{% block body%}
 
-    <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/bootstrap/css/bootstrap.css') }}" type="text/css" />
+<div class="container">
+  <div id="header" class="hero-unit">
+    <h1>Liste des habitations</h1>
+    <p>Déstiné aux mairie afin de gerer déménagements.</p>
+  </div>
 
+  <div class="row">
+    <div id="menu" class="span3">
+      <h3>Accueil</h3>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
+        <li><a href="{{path('gestion_mairie_ajouterHabite')}}">Ajouter un em(dé)ménagement</a></li>
 
-
-   <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/stylesheet.css') }}" type="text/css" />
-
-
-
-  </head>
-
-  <body>
-    <div class="container">
-      <div id="header" class="hero-unit">
-        <h1>Liste des habitations</h1>
-        <p>Déstiné aux mairie afin de gerer les personnes.</p>
-      </div>
-
-      <div class="row">
-        <div id="menu" class="span3">
-          <h3>Accueil</h3>
-          <ul class="nav nav-pills nav-stacked">
-            <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
-            <li><a href="{{path('gestion_mairie_ajouterHabite')}}">Ajouter un emménagement</a></li>
-
-	  </ul>
-          
-          
-        </div>
+      </ul>
       
-	<div id="content" class="span8">
-          {% block body %}
-          {% for habite in habites %}
-	  <table>
-	    <tr><td style="width: 500px;">{{habite.personne }} <b>habite au :</b> {{habite.logement}}</td><td></br></td><td></br>
-		<form action="{{ path('gestion_mairie_supprimerHabite', {'id': habite.id}) }}" method="post">
-		    <input type="submit" value="Déménagement" class="btn btn-danger" />
-   		</form>  
-		  
-</td></tr>
-</table>
-	  {% endfor %}
-
-	  {% endblock %}
-        </div>
-      </div>
-
-      <hr>
-
-      <footer>
-        <p>Univ'Nantes © 2014.</p>
-      </footer>
+      
     </div>
+    
+    <div id="content" class="span8">
+      
+      {% for habite in habites %}
+      <table>
+	<tr><td style="width: 500px;">{{habite.personne }} <b>habite au :</b> {{habite.logement}}</td><td></br></td><td></br>
+	    <form action="{{ path('gestion_mairie_supprimerHabite', {'id': habite.id}) }}" method="post">
+	      <input type="submit" value="Déménagement" class="btn btn-danger" />
+   	    </form>  
+	    
+	</td></tr>
+      </table>
+      {% endfor %}
+    </div>
+  </div>
 
-  </body>
-</html>
+  <hr>
+
+  <footer>
+    <p>Univ'Nantes © 2014.</p>
+  </footer>
+</div>
+
+{% endblock %}

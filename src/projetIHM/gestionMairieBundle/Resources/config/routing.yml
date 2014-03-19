@@ -8,6 +8,8 @@ gestion_mairie_homepage:
 
 
 
+
+
 gestion_mairie_personne:
     pattern:  /mairie/personne
     defaults: { _controller: projetIHMgestionMairieBundle:Personne:index }

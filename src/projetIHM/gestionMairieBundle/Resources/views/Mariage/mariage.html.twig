@@ -1,28 +1,17 @@
-{# src/Sdz/BlogBundle/Resources/views/AjouterPersonne/ajouterPersonne.html.twig #}
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-    <title>LES MARIAGES</title>
+{# src/Sdz/BlogBundle/Resources/views/AjouterPersonne/mariage.html.twig #}
 
 
-    <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/bootstrap/css/bootstrap.css') }}" type="text/css" />
+{% extends 'projetIHMgestionMairieBundle::base.html.twig' %}
+
+{% block title%}Gérer les mariages{% endblock%}
+
+{% block body%}
 
 
-
-    <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/stylesheet.css') }}" type="text/css" />
-
-
-
-  </head>
-
-  <body>
     <div class="container">
       <div id="header" class="hero-unit">
         <h1>Liste des mariages</h1>
-        <p>Déstiné aux mairie afin de gerer les personnes.</p>
+        <p>Déstiné aux mairie afin de gerer les mariages.</p>
       </div>
 
       <div class="row">
@@ -37,7 +26,7 @@
         </div>
 	
 	<div id="content" class="span8">
-          {% block body %}
+         
           {% for mariage in mariages %}
 	  <table>
 	    <tr><td>{{mariage.personne1 }} <b>marié avec </b> {{ mariage.personne2 }} </br>le {{ mariage.dateMariage|date('Y-m-d') }} à {{ mariage.villeMairie }}</td><td></br>
@@ -49,7 +38,7 @@
 	  </table>
 	  {% endfor %}
 
-	  {% endblock %}
+
         </div>
       </div>
 
@@ -59,6 +48,4 @@
         <p>Univ'Nantes © 2014.</p>
       </footer>
     </div>
-
-  </body>
-</html>
+	  {% endblock %}

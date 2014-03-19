@@ -1,19 +1,11 @@
 {# src/Sdz/BlogBundle/Resources/views/AjouterPersonne/ajouterPersonne.html.twig #}
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>AJOUTER PERSONNE</title>
+{% extends 'projetIHMgestionMairieBundle::base.html.twig' %}
 
+{% block title%}Ajouter des personnes{% endblock%}
 
-    <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/bootstrap/css/bootstrap.css') }}" type="text/css" />
-
-
-  </head>
-
-  <body>
+{% block body%}
     <div class="container">
       <div id="header" class="hero-unit">
         <h1>Ajouter une personne</h1>
@@ -32,15 +24,15 @@
         </div>
       
 	<div id="content" class="span8">
-          {% block body %}
-	  <h3>Formulaire d'article</h3>
+
+	  <h3>Formulaire d'une personne</h3>
 	  <div class="well">
 	    <form method="post" {{ form_enctype(form) }}>
 	      {{ form_widget(form) }}
 	      <input type="submit" class="btn btn-primary" />
 	    </form>
 	  </div>
-          {% endblock %}
+
         </div>
       </div>
 
@@ -50,6 +42,4 @@
         <p>Univ'Nantes © 2014.</p>
       </footer>
     </div>
-
-  </body>
-</html>
+ {% endblock %}

@@ -1,24 +1,10 @@
-{# src/Sdz/BlogBundle/Resources/views/AjouterPersonne/ajouterPersonne.html.twig #}
+{# src/Sdz/BlogBundle/Resources/views/AjouterPersonne/personne.html.twig #}
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% extends 'projetIHMgestionMairieBundle::base.html.twig' %}
 
-    <title>AJOUTER PERSONNE</title>
+{% block title%}Liste des personnes{% endblock%}
 
-
-    <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/bootstrap/css/bootstrap.css') }}" type="text/css" />
-
-
-
-   <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/stylesheet.css') }}" type="text/css" />
-
-
-
-  </head>
-
-  <body>
+{% block body%}
     <div class="container">
       <div id="header" class="hero-unit">
         <h1>Liste des personnes</h1>
@@ -37,7 +23,7 @@
         </div>
       
 	<div id="content" class="span8">
-          {% block body %}
+          
           {% for personne in personnes %}
 	  <table>
 	    <tr><td style="width: 500px;">{{personne.Nsecu }} - {{personne.nom }} {{ personne.prenom }} né le {{ personne.dateNai|date('Y-m-d') }} à {{ personne.villeNai }}</td><td></br><form action="{{ path('gestion_mairie_modifierPersonne', {'id': personne.id}) }}" method="post">
@@ -50,7 +36,7 @@
 </table>
 	  {% endfor %}
 
-	  {% endblock %}
+	  
         </div>
       </div>
 
@@ -61,5 +47,5 @@
       </footer>
     </div>
 
-  </body>
-</html>
+
+{% endblock %}
