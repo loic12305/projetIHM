@@ -91,3 +91,4 @@ gestion_mairie_supprimerHabite:
     defaults: { _controller: projetIHMgestionMairieBundle:Habite:supprimerHabite }
     requirements:
        id:  \d+
+

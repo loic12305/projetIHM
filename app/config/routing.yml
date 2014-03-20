@@ -1,6 +1,20 @@
+projet_ihm_user:
+    resource: "@projetIHMUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 projetihm_gestion_mairie:
     resource: "@projetIHMgestionMairieBundle/Resources/config/routing.yml"
     prefix:   /{_locale}
     requirements:
         _locale: en|fr
+
+login:
+    pattern : /login
+    defaults:  { _controller: projetIHMUserBundle:Security:login }
+
+login_check:
+    pattern:   /login_check
+
+logout:
+    pattern:   /logout
 
