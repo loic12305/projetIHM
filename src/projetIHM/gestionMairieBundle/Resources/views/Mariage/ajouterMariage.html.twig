@@ -2,7 +2,7 @@
 
 {% extends 'projetIHMgestionMairieBundle::base.html.twig' %}
 
-{% block title%}Ajouter un mariage {% endblock%}
+{% block title%}{{'Ajouter un mariage'|trans}} {% endblock%}
 
 {% block body%}
 
@@ -29,7 +29,7 @@
       <div class="well">
 	<form method="post" {{ form_enctype(form) }}>
 	  {{ form_widget(form) }}
-	  <input type="submit" class="btn btn-primary" />
+	  <input type="submit" value="{{'Valider'|trans}}"class="btn btn-primary" />
 	</form>
       </div>
      
@@ -37,9 +37,5 @@
   </div>
 
   <hr>
+{% endblock %}
 
-  <footer>
-    <p>Univ'Nantes © 2014.</p>
-  </footer>
-</div>
- {% endblock %}

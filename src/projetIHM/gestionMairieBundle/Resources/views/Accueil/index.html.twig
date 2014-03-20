@@ -1,54 +1,34 @@
 {# src/Sdz/BlogBundle/Resources/views/Test/index.html.twig #}
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% extends 'projetIHMgestionMairieBundle::base.html.twig' %}
 
-    <title>{{"Gestion de l'état civil"|trans}}</title>
+{% block title%}{{"Gestion de l'état civil"|trans}}{% endblock%}
 
-    <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/stylesheet.css') }}" type="text/css" />
+{% block body %}
+<div class="container">
+  <div id="header" class="hero-unit">
+    <h1>{{"Gestion de l'état civil"|trans}}</h1>
+    <p>{{'Déstiné aux mairie afin de gerer les personnes.'|trans}}</p>
+  </div>
 
-    <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/bootstrap/css/bootstrap.css') }}" type="text/css" />
-
-
-  </head>
-
-  {% block body %}
-  <body>
-    <div class="container">
-      <div id="header" class="hero-unit">
-        <h1>{{"Gestion de l'état civil"|trans}}</h1>
-        <p>{{'Déstiné aux mairie afin de gerer les personnes.'|trans}}</p>
-      </div>
-
-      <div class="row">
-        <div id="menu" class="span3">
-          <h3>{{'Accueil'|trans}}</h3>
-          <ul class="nav nav-pills nav-stacked">
-            <li><a href="{{path('gestion_mairie_homepage')}}">{{'Accueil du Site'|trans}}</a></li>
-            <li><a href="{{path('gestion_mairie_personne')}}">{{'Gerer les personnes'|trans}}</a></li>
-	    <li><a href="{{path('gestion_mairie_mariage')}}">{{'Gérer les mariages'|trans}}</a></li>
-	    <li><a href="{{path('gestion_mairie_logement')}}">{{'Gérer les logements'|trans}}</a></li>
-	    <li><a href="{{path('gestion_mairie_habite')}}">{{'Gérer les em(dé)ménagements'|trans}}</a></li>
-          </ul>
-          
-          
-        </div>
+  <div class="row">
+    <div id="menu" class="span3">
+      <h3>{{'Accueil'|trans}}</h3>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="{{path('gestion_mairie_homepage')}}">{{'Accueil du Site'|trans}}</a></li>
+        <li><a href="{{path('gestion_mairie_personne')}}">{{'Gerer les personnes'|trans}}</a></li>
+	<li><a href="{{path('gestion_mairie_mariage')}}">{{'Gérer les mariages'|trans}}</a></li>
+	<li><a href="{{path('gestion_mairie_logement')}}">{{'Gérer les logements'|trans}}</a></li>
+	<li><a href="{{path('gestion_mairie_habite')}}">{{'Gérer les em(dé)ménagements'|trans}}</a></li>
+      </ul>
       
-	<div id="content" class="span8">
-
-
-SALUT
-        </div>
-      </div>
-
-      <hr>
-      <footer>
-        <p>Univ'Nantes © 2014.</p>
-      </footer>
+      
     </div>
+    
+    <div id="content" class="span8">
+      SALUT
+    </div>
+  </div>
 
-  </body>
-          {% endblock %}
-</html>
+
+  {% endblock %}

@@ -2,7 +2,8 @@
 
 {% extends 'projetIHMgestionMairieBundle::base.html.twig' %}
 
-{% block title%}Modifier un logement{% endblock%}
+{% block title%}{{'Modifier un logement'|trans}}
+{% endblock%}
 
 {% block body%}
 
@@ -31,18 +32,11 @@
 
 	  {{form_widget(form)}}
 
-	  <input type="submit" class="btn btn-primary" />
+	  <input type="submit" value="{{'Valider'|trans}}"class="btn btn-primary" />
 	</form>
       </div>
   
     </div>
   </div>
-
-  <hr>
-
-  <footer>
-    <p>Univ'Nantes © 2014.</p>
-  </footer>
-</div>
 
 {% endblock %}

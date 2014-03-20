@@ -4,23 +4,23 @@
 
 {% extends 'projetIHMgestionMairieBundle::base.html.twig' %}
 
-{% block title%}modifier des personnes{% endblock%}
+{% block title%}{{'Modifier des personnes'|trans}}{% endblock%}
 
 {% block body%}
 
 
     <div class="container">
       <div id="header" class="hero-unit">
-        <h1>Ajouter une personne</h1>
-        <p>Déstiné aux mairie afin de gerer les personnes.</p>
+        <h1>{{'Modifier une personne'|trans}}</h1>
+        <p>{{'Déstiné aux mairie afin de gerer les personnes.'|trans}}</p>
       </div>
 
       <div class="row">
         <div id="menu" class="span3">
-          <h3>Accueil</h3>
+          <h3>{{'Accueil'|trans}}</h3>
           <ul class="nav nav-pills nav-stacked">
-            <li><a href="{{path('gestion_mairie_homepage')}}">Accueil du Site</a></li>
-            <li><a href="{{path('gestion_mairie_personne')}}">Gerer les personnes</a></li>
+            <li><a href="{{path('gestion_mairie_homepage')}}">{{'Accueil du Site'|trans}}</a></li>
+            <li><a href="{{path('gestion_mairie_personne')}}">{{'Gerer les personnes'|trans}}</a></li>
           </ul>
           
           
@@ -28,7 +28,7 @@
       
 	<div id="content" class="span8">
 
-	  <h3>Formulaire d'article</h3>
+	  <h3>{{"Formulaire d'une personne"|trans}}</h3>
 	  <div class="well">
 	    <form method="GET" {{ form_enctype(form) }}>
 {{ form_widget(form)}}

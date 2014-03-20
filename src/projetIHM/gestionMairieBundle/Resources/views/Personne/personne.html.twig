@@ -27,9 +27,9 @@
           {% for personne in personnes %}
 	  <table>
 	    <tr><td style="width: 500px;">{{personne.Nsecu }} - {{personne.nom }} {{ personne.prenom }} {{'né le'|trans}} {{ personne.dateNai|date('Y-m-d') }} à {{ personne.villeNai }}</td><td></br><form action="{{ path('gestion_mairie_modifierPersonne', {'id': personne.id}) }}" method="post">
-		    <input type="submit" value="modifier" class="btn btn-default" />
+		    <input type="submit" value="{{'modifier'|trans}}" class="btn btn-default" />
    		  </form></td><td></br><form action="{{ path('gestion_mairie_supprimerPersonne', {'id': personne.id}) }}" method="post">
-		    <input type="submit" value="Supprimer" class="btn btn-danger" />
+		    <input type="submit" value="{{'Supprimer'|trans}}" class="btn btn-danger" />
    		  </form>  
 		  
 </td></tr>
@@ -39,13 +39,6 @@
 	  
         </div>
       </div>
-
-      <hr>
-
-      <footer>
-        <p>Univ'Nantes © 2014.</p>
-      </footer>
-    </div>
 
 
 {% endblock %}

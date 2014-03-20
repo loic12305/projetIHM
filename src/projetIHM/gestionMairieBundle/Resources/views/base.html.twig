@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-
-
     <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/stylesheet.css') }}" type="text/css" />
 
 
@@ -14,7 +12,25 @@
 
 
 <body>
-{% block body %}{% endblock %}
+
+{% block body %}
+
+
+{% endblock %}
+
+
+
+      <hr>
+      <footer>
+	<div id="menu" style="text-align:center;">
+	<a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}">FR</a>
+<a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">EN</a>
+</div>        
+
+<p>Univ'Nantes © 2014.</p>
+      </footer>
+    </div>
+
 </body>
 
 </html>

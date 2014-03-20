@@ -3,7 +3,7 @@
 
 {% extends 'projetIHMgestionMairieBundle::base.html.twig' %}
 
-{% block title%}Gérer les mariages{% endblock%}
+{% block title%}{{'Gérer les mariages'|trans}}{% endblock%}
 
 {% block body%}
 
@@ -41,11 +41,5 @@
 
         </div>
       </div>
-
-      <hr>
-
-      <footer>
-        <p>Univ'Nantes © 2014.</p>
-      </footer>
-    </div>
-	  {% endblock %}
+  
+      {% endblock %}

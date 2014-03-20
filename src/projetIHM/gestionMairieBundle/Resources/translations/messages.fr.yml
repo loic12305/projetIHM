@@ -1,7 +1,7 @@
 'Gestion de l''état civil': 'Gestion de l''état civil'
 'Déstiné aux mairie afin de gerer les personnes.': 'Déstiné aux mairie afin de gerer les personnes.'
 Accueil: Accueil
-'Accueil du Site': Accueil du Site
+'Accueil du Site': 'Accueil du Site'
 'Gerer les personnes': 'Gerer les personnes'
 'Gérer les mariages': 'Gérer les mariages'
 'Gérer les logements': 'Gérer les logements'
@@ -35,3 +35,10 @@ Supprimer: Supprimer
 'marié avec': 'marié avec'
 Divorcer: Divorcer
 'né le': 'né le'
+Valider: Valider
+'Gérer les déménagements': 'Gérer les déménagements'
+'Ajouter des personnes': 'Ajouter des personnes'
+'Déstiné aux mairie afin de gerer les personnes': 'Déstiné aux mairie afin de gerer les personnes'
+'Formulaire d''une personne': 'Formulaire d''une personne'
+'Modifier des personnes': 'Modifier des personnes'
+'Modifier une personne': 'Modifier une personne'
