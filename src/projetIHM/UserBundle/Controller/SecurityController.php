@@ -12,7 +12,9 @@ class SecurityController extends Controller
   {
     // Si le visiteur est déjà identifié, on le redirige vers l'accueil
     if ($this->get('security.context')->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
-      return $this->redirect($this->generateUrl('gestion_mairie_homepage'));
+      
+
+   return $this->redirect($this->generateUrl('gestion_mairie_homepage'));
     }
 
     $request = $this->getRequest();
@@ -26,10 +28,17 @@ class SecurityController extends Controller
       $session->remove(SecurityContext::AUTHENTICATION_ERROR);
     }
 
+    $this->container->get('form.csrf_provider')->generateCsrfToken('authenticate');
+
     return $this->render('projetIHMUserBundle:Security:login.html.twig', array(
       // Valeur du précédent nom d'utilisateur entré par l'internaute
       'last_username' => $session->get(SecurityContext::LAST_USERNAME),
-      'error'         => $error,
+      'error'         => $error, 
+      'csrf_token'    => $this->container->get('form.csrf_provider')->generateCsrfToken('authenticate'),
     ));
   }
+
+
+
+
 }
