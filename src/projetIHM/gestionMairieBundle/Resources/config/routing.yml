@@ -11,6 +11,10 @@ gestion_mairie_personne:
     pattern:  /mairie/personne
     defaults: { _controller: projetIHMgestionMairieBundle:Personne:index }
 
+gestion_mairie_personne_xml:
+    pattern:  /mairie/personne/rss.xml
+    defaults: { _controller: projetIHMgestionMairieBundle:Personne:indexXML }
+
 
 gestion_mairie_ajouterPersonne:
     pattern:  /mairie/ajouterPersonne
@@ -21,6 +25,8 @@ gestion_mairie_supprimerPersonne:
     defaults: { _controller: projetIHMgestionMairieBundle:Personne:supprimerPersonne }
     requirements:
        id:  \d+
+
+
 
 gestion_mairie_modifierPersonne:
     pattern:  /mairie/modifierPersonne/{id}

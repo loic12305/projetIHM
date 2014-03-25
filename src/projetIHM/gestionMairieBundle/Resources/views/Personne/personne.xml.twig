@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<rss version="2.0">
+  <channel>
+    <title>Personnes</title>
+    <link>http://www.xul.fr/</link>
+    <description>L'interface graphique XML etc...</description>
+
+    {% for personne in personnes %}
+
+
+    <item>
+      <title>{{personne.nom }}  {{ personne.prenom }}</title>
+      <link>http://www.xul.fr/xml-rss.html</link> 
+      <description>{{personne.Nsecu }}</description>
+
+
+    </item>
+
+
+    {% endfor %}
+
+  </channel>
+</rss>

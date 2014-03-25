@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<rss version="2.0">
+  <channel>
+    <title>Personnes</title>
+    <link>http://www.xul.fr/</link>
+    <description>L'interface graphique XML etc...</description>
+
+    
+
+    <item>
+      <title>BLOT  PA</title>
+      <link>http://www.xul.fr/xml-rss.html</link> 
+      <description>852369</description>
+
+
+    </item>
+
+
+    
+
+    <item>
+      <title>BERTE  Agathe</title>
+      <link>http://www.xul.fr/xml-rss.html</link> 
+      <description>4564566</description>
+
+
+    </item>
+
+
+    
+
+    <item>
+      <title>JEAN  Paul</title>
+      <link>http://www.xul.fr/xml-rss.html</link> 
+      <description>543546</description>
+
+
+    </item>
+
+
+    
+
+    <item>
+      <title>ABE  Marie</title>
+      <link>http://www.xul.fr/xml-rss.html</link> 
+      <description>876543</description>
+
+
+    </item>
+
+
+    
+  </channel>
+</rss>
+

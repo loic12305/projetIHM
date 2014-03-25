@@ -37,6 +37,29 @@ class PersonneController extends Controller
 
 
 
+  public function indexXMLAction()
+  {
+    // On récupère le repository
+    $repository = $this->getDoctrine()
+      ->getManager()
+      ->getRepository('projetIHMgestionMairieBundle:Personne');
+
+    // On récupère toute les entités
+    $personnes = $repository->findAll();
+  
+
+    // Ou null si aucune personne n'est trouvé
+    if($personnes === null)
+      {
+	return $this->redirect($this->generateUrl('gestion_mairie_homepage'));
+      }
+
+    return $this->render('projetIHMgestionMairieBundle:Personne:personne.xml.twig', array('personnes' => $personnes));
+  }      
+
+
+
+
 
   public function ajouterPersonneAction()
   {
