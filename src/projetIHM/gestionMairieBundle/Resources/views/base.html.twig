@@ -3,7 +3,7 @@
   <head>
 
     <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/bootstrap/css/bootstrap.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/stylesheet.css') }}" type="text/css" />
+    {% block css %}{% endblock %}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>{% block title %}Test Application{% endblock %}</title>
   </head>
@@ -25,7 +25,8 @@
 <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">EN</a>
 </div>        
 
-<p>Univ'Nantes © 2014.</p>
+	<p>Univ'Nantes © 2014.</p><a href="{{ path('gestion_mairie_homepage',{'theme':'stylesheet.css'}) }}"><font color="black">Thème gris</font> ====</a>
+<a href="{{ path('gestion_mairie_homepage',{'theme':'stylesheet2.css'}) }}"><font color="green">Thème vert</font></a>
       </footer>
     </div>
 

@@ -3,8 +3,13 @@
 {% extends 'projetIHMgestionMairieBundle::base.html.twig' %}
 
 {% block title%}{{"Gestion de l'état civil"|trans}}{% endblock%}
+{% block css %}<link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/' ~ app.session.get('theme') ) }}" type="text/css" />
+{% endblock %}
+
 
 {% block body %}
+
+
 <div class="container">
   <div id="header" class="hero-unit">
     <h1>{{"Gestion de l'état civil"|trans}}</h1>
@@ -30,7 +35,7 @@
     </div>
     
     <div id="content" class="span8">
-      SALUT
+      Bonjour {{ app.user.username }} bienvenu sur le site de gestion de votre état civil.
     </div>
   </div>
 

@@ -3,6 +3,8 @@
 
 
 {% extends 'projetIHMgestionMairieBundle::base.html.twig' %}
+{% block css %}<link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/' ~ app.session.get('theme') ) }}" type="text/css" />
+{% endblock %}
 
 {% block title%}{{'Modifier des personnes'|trans}}{% endblock%}
 

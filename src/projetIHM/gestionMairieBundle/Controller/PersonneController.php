@@ -66,6 +66,8 @@ class PersonneController extends Controller
     // On crée un objet Article
     $personne = new Personne();
 
+
+
     $form = $this->createForm(new PersonneType, $personne);
 
     $request = $this->get('request');

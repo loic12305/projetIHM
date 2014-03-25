@@ -5,6 +5,8 @@
 
 {% block title%}{{'Ajouter un logement'|trans}}
 {% endblock%}
+{% block css %}<link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/' ~ app.session.get('theme') ) }}" type="text/css" />
+{% endblock %}
 
 {% block body%}
 
