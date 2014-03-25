@@ -30,7 +30,7 @@
 	<div id="content" class="span8">
          
           {% for mariage in mariages %}
-	  <table>
+	  <table class="table table-striped">
 	    <tr><td>{{mariage.personne1 }} <b>{{'marié avec'|trans}} </b> {{ mariage.personne2 }} </br>le {{ mariage.dateMariage|date('Y-m-d') }} à {{ mariage.villeMairie }}</td><td></br>
 <td></br><form action="{{ path('gestion_mairie_supprimerMariage', {'id': mariage.id}) }}" method="POST">
 		  <input type="submit" value="{{'Divorcer'|trans}}" class="btn btn-danger" />

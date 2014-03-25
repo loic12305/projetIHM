@@ -27,7 +27,7 @@
 	<div id="content" class="span8">
           
           {% for personne in personnes %}
-	  <table>
+	  <table class="table table-bordered">
 	    <tr><td style="width: 500px;">{{personne.Nsecu }} - {{personne.nom }} {{ personne.prenom }} {{'né le'|trans}} {{ personne.dateNai|date('Y-m-d') }} à {{ personne.villeNai }}</td><td></br><form action="{{ path('gestion_mairie_modifierPersonne', {'id': personne.id}) }}" method="post">
 		    <input type="submit" value="{{'modifier'|trans}}" class="btn btn-default" />
    		  </form></td><td></br><form action="{{ path('gestion_mairie_supprimerPersonne', {'id': personne.id}) }}" method="post">

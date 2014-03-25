@@ -28,7 +28,7 @@
     <div id="content" class="span8">
       
       {% for logement in logements %}
-      <table>
+      <table class="table table-striped">
 	<tr><td style="width: 500px;">{{logement.id }} - {{logement.numRue }} {{ logement.nomRue }} {{ logement.cp }} {{logement.ville}}</td><td></br><form action="{{ path('gestion_mairie_modifierLogement', {'id': logement.id}) }}" method="post">
 	      <input type="submit" value="{{'modifier'|trans}}" class="btn btn-default" />
    	  </form></td><td></br><form action="{{ path('gestion_mairie_modifierLogement', {'id': logement.id}) }}" method="post">

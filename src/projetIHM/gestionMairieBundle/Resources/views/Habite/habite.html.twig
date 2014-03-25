@@ -29,7 +29,7 @@
     <div id="content" class="span8">
       
       {% for habite in habites %}
-      <table>
+<table class="table table-striped">
 	<tr><td style="width: 500px;">{{habite.personne }} <b>{{'habite au'|trans}} :</b> {{habite.logement}}</td><td></br></td><td></br>
 	    <form action="{{ path('gestion_mairie_supprimerHabite', {'id': habite.id}) }}" method="post">
 	      <input type="submit" value="{{'Déménagement'|trans}}" class="btn btn-danger" />
