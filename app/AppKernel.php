@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new projetIHM\gestionMairieBundle\projetIHMgestionMairieBundle(),
             new projetIHM\UserBundle\projetIHMUserBundle(),
+	    new FOS\UserBundle\FOSUserBundle(),
+	    
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
