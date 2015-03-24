@@ -10,15 +10,14 @@ following options.
 
 ### Prerequisites
   * git;
-
   * php;
 
 ### Download 
 Clone the repository :
-	git clone https://github.com/loic12305/projetIHM.git && cd projetIHM
+    git clone https://github.com/loic12305/projetIHM.git && cd projetIHM
 
 Install all dependences
-	sudo php composer.phar update --prefer-dist   
+    sudo php composer.phar update --prefer-dist   
 
 Update `app/config/parameters.yml` with right config
 
