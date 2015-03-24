@@ -7,13 +7,14 @@
 {% block css %}<link rel="stylesheet" href="{{ asset('bundles/projetihmgestionmairie/css/' ~ app.session.get('theme') ) }}" type="text/css" />
 {% endblock %}
 
-{% block body%}
 
-<div class="container">
-  <div id="header" class="hero-unit">
+{% block header %}
     <h1>{{'Ajouter un emménagement'|trans}}</h1>
     <p>{{'Déstiné aux mairie afin de gerer les emménagement.'|trans}}</p>
-  </div>
+{% endblock %}
+
+
+{% block body%}
 
   <div class="row">
     <div id="menu" class="span3" >
